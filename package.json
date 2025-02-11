@@ -11,7 +11,8 @@
     "prettify": "prettier --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "react": "^19.0.0",
