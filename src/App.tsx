@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PlayersList } from './components/Players/PlayersList.tsx';
 import styled, { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import { TeamsList } from './components/Teams/TeamsList.tsx';
 
 const queryClient = new QueryClient();
 
@@ -67,29 +68,22 @@ export const App = () => {
           <nav>
             <Menu>
               <MenuItem>
-                <a href='#' onClick={() => handleRouteChange('players')}>
-                  Gracze
-                </a>
+                <p onClick={() => handleRouteChange('players')}>Gracze</p>
               </MenuItem>
               <MenuItem>
-                <a href='#' onClick={() => handleRouteChange('teams')}>
-                  Drużyny
-                </a>
+                <p onClick={() => handleRouteChange('teams')}>Drużyny</p>
               </MenuItem>
               <MenuItem>
-                <a href='#' onClick={() => handleRouteChange('games')}>
-                  Rozgrywki
-                </a>
+                <p onClick={() => handleRouteChange('games')}>Rozgrywki</p>
               </MenuItem>
               <MenuItem>
-                <a href='#' onClick={() => handleRouteChange('stats')}>
-                  Statystyki
-                </a>
+                <p onClick={() => handleRouteChange('stats')}>Statystyki</p>
               </MenuItem>
             </Menu>
           </nav>
 
           {currentRoute === 'players' && <PlayersList />}
+          {currentRoute === 'teams' && <TeamsList />}
         </Main>
       </ThemeProvider>
     </QueryClientProvider>
