@@ -3,5 +3,5 @@
  * @type {import('lint-staged').Configuration}
  */
 export default {
-  '*.{ts,tsx}': ['yarn typecheck', 'yarn prettify', 'yarn lint'],
+  '*.{ts,tsx}': ['npm run prettify', 'eslint --fix'],
 };

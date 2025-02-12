@@ -11,20 +11,22 @@
     "prettify": "prettier --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "typecheck": "tsc --noEmit --jsx react-jsx",
+    "typecheck": "tsc --noEmit --jsx react-jsx --target ES2020",
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-modal": "^3.16.3",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "lint-staged": "^15.4.3",
     "@eslint/js": "^9.19.0",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
+    "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.19.0",
     "eslint-plugin-import": "^2.31.0",
@@ -32,6 +34,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.5.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
