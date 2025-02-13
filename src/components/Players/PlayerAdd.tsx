@@ -21,8 +21,10 @@ export const PlayerAdd = (props: Props) => {
   const queryClient = useQueryClient();
 
   const handleAddPlayer = () => {
-    if (newPlayer.name === '' || newPlayer.surname === '')
-      return setErrorMessage('Nie wprowadziłeś wymaganych danych gracza');
+    if (newPlayer.name === '' || newPlayer.surname === '') {
+      setErrorMessage('Nie wprowadziłeś wymaganych danych gracza');
+      return;
+    }
 
     mutate(
       {
