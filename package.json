@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "json-server": "npx json-server db.json",
+    "json-server": "json-server db.json",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint --fix",
