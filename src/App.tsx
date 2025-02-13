@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { TeamsList } from './components/Teams/TeamsList.tsx';
 import { GamesList } from './components/Games/GamesList.tsx';
+import { StatsMain } from './components/Stats/StatsMain.tsx';
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ export const App = () => {
           {currentRoute === 'players' && <PlayersList />}
           {currentRoute === 'teams' && <TeamsList />}
           {currentRoute === 'games' && <GamesList />}
+          {currentRoute === 'stats' && <StatsMain />}
         </Main>
       </ThemeProvider>
     </QueryClientProvider>
