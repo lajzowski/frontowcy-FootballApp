@@ -1,10 +1,8 @@
-import styled from 'styled-components';
 import { useGetQuery } from '../../hooks/useGetQuery.ts';
 import { Game } from '../../types/game.interface.ts';
 import { useEffect, useState } from 'react';
 import { Team } from '../../types/team.interface.ts';
-
-const Main = styled.div``;
+import { Card } from '../addons/Card.tsx';
 
 interface TeamWithTotalScore extends Team {
   totalScore: number;
@@ -46,14 +44,14 @@ export const TopThreeTeams = () => {
   };
 
   return (
-    <Main>
-      <h2>Top 3</h2>
+    <Card>
+      <h2>TOP 3</h2>
       {teamWithTotalScore.length > 0 &&
         teamWithTotalScore.map((team, ix) => (
           <p>
             {++ix}. {team.name} {team.totalScore}
           </p>
         ))}
-    </Main>
+    </Card>
   );
 };

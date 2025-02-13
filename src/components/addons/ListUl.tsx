@@ -11,14 +11,14 @@ const Ul = styled.ul`
 
   li {
     display: flex;
-    background-color: #f5f5f5;
+    background-color: ${({ theme }) => theme.colors.listBackground};
     border-radius: 5px;
     transition: background-color 0.3s;
     justify-content: space-between;
 
     padding: 0 10px;
     &:hover {
-      background-color: #e0e0e0;
+      background-color: ${({ theme }) => theme.colors.listBackgroundHover};
     }
   }
 `;

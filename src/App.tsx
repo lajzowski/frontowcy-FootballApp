@@ -5,30 +5,27 @@ import { useState } from 'react';
 import { TeamsList } from './components/Teams/TeamsList.tsx';
 import { GamesList } from './components/Games/GamesList.tsx';
 import { StatsMain } from './components/Stats/StatsMain.tsx';
+import { GlobalStyle } from './components/layout/Styles/GlobalStyle.tsx';
+import { darkTheme, lightTheme } from './components/layout/Styles/theme.ts';
 
 const queryClient = new QueryClient();
 
-const theme = {
-  light: {
-    fg: '#000000',
-    bg: '#FFFFFF',
-  },
-  dark: {
-    buttonBgColor: '#533f3f',
-    buttonTextColor: '#FFFFFF',
-  },
-};
-
 const MenuItem = styled.li`
-  a {
-    color: ${({ theme }) => theme.light.fg};
-    text-decoration: none;
-    font-size: 16px;
+  p {
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 18px;
 
     &:hover {
-      color: ${({ theme }) => theme.dark.buttonTextColor};
+      color: ${({ theme }) => theme.colors.linkHover};
+      border-bottom: 2px solid ${({ theme }) => theme.colors.linkHover};
+      cursor: pointer;
     }
   }
+`;
+
+const Nav = styled.nav`
+  height: 50px;
+  margin-bottom: 32px;
 `;
 
 const Menu = styled.ul`
@@ -52,10 +49,22 @@ const Main = styled.main`
   box-sizing: border-box;
 `;
 
+const ButtonChangeTheme = styled.button`
+  background: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 48px;
+  cursor: pointer;
+`;
+
 type Route = 'players' | 'teams' | 'games' | 'stats';
 
 export const App = () => {
   const [currentRoute, setCurrentRoute] = useState<Route>('players');
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const handleRouteChange = (route: Route) => {
     setCurrentRoute(route);
@@ -63,11 +72,16 @@ export const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <GlobalStyle />
+
+        <ButtonChangeTheme onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? '🌙' : '☀️'}
+        </ButtonChangeTheme>
+
         <Main>
           <h1>Frontowcy - FootballApp</h1>
-
-          <nav>
+          <Nav>
             <Menu>
               <MenuItem>
                 <p onClick={() => handleRouteChange('players')}>Gracze</p>
@@ -82,7 +96,7 @@ export const App = () => {
                 <p onClick={() => handleRouteChange('stats')}>Statystyki</p>
               </MenuItem>
             </Menu>
-          </nav>
+          </Nav>
 
           {currentRoute === 'players' && <PlayersList />}
           {currentRoute === 'teams' && <TeamsList />}

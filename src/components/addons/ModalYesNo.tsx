@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { ReactNode } from 'react';
+import styled, { useTheme } from 'styled-components';
 
 Modal.setAppElement('#root'); // Ustaw główny element aplikacji
 
@@ -11,7 +12,26 @@ interface Props {
   content?: string | ReactNode;
 }
 
+const ButtonYes = styled.button`
+  background: red;
+  color: white;
+  margin: 5px;
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+`;
+
+const ButtonNo = styled.button`
+  background: gray;
+  color: white;
+  margin: 5px;
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+`;
+
 export const ModalYesNo = ({ isOpen, onYes, onNo, query, content }: Props) => {
+  const theme = useTheme();
   return (
     <Modal
       isOpen={isOpen}
@@ -24,6 +44,8 @@ export const ModalYesNo = ({ isOpen, onYes, onNo, query, content }: Props) => {
           transform: 'translate(-50%, -50%)',
           width: '250px',
           height: '250px',
+          color: theme.colors.text,
+          backgroundColor: theme.colors.background,
         },
       }}
     >
@@ -32,18 +54,13 @@ export const ModalYesNo = ({ isOpen, onYes, onNo, query, content }: Props) => {
         {content && <div>{content}</div>}
 
         <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
-          <button
-            onClick={onYes}
-            style={{ background: 'red', color: 'white', margin: '5px' }}
-          >
-            TAK
-          </button>
-          <button
+          <ButtonYes onClick={onYes}>TAK</ButtonYes>
+          <ButtonNo
             onClick={onNo}
             style={{ background: 'gray', color: 'white', margin: '5px' }}
           >
             NIE
-          </button>
+          </ButtonNo>
         </div>
       </div>
     </Modal>

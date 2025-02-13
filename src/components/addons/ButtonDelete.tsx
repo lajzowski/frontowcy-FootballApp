@@ -10,7 +10,7 @@ const Button = styled.button`
   margin: 0 2px;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: ${({ theme }) => theme.colors.buttonRadiusBgColor};
     cursor: pointer;
   }
 `;

@@ -3,7 +3,9 @@ import { LastGame } from './LastGame.tsx';
 import { TopThreeTeams } from './TopThreeTeams.tsx';
 import { Chart } from './Chart.tsx';
 
-const Main = styled.div``;
+const Main = styled.div`
+  width: 100%;
+`;
 
 export const StatsMain = () => {
   return (

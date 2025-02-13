@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { ReactNode } from 'react';
+import styled, { useTheme } from 'styled-components';
 
 interface Props {
   title: string;
@@ -8,20 +9,33 @@ interface Props {
   onClose: () => void;
 }
 
+const ModalTitle = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+`;
+
 export const ModalEdit = (props: Props) => {
+  const theme = useTheme();
   return (
     <Modal
       appElement={document.getElementById('root') as HTMLElement}
       isOpen={props.isOpen}
-      //  onRequestClose={closeModal}
       contentLabel={props.title}
       style={{
         content: {
+          color: theme.colors.text,
           top: '50%',
           left: '50%',
+
           transform: 'translate(-50%, -50%)',
           width: '250px',
-          height: '150px',
+          height: 'fit-content',
+          textAlign: 'center',
+          maxWidth: '100%',
+          maxHeight: '90%',
+          backgroundColor: theme.colors.listBackground,
         },
       }}
     >
@@ -35,11 +49,12 @@ export const ModalEdit = (props: Props) => {
           border: 'none',
           fontSize: '18px',
           cursor: 'pointer',
+          color: theme.colors.text,
         }}
       >
         ×
       </button>
-      <p>{props.title}</p>
+      <ModalTitle>{props.title}</ModalTitle>
       {props.children}
     </Modal>
   );

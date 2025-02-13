@@ -4,6 +4,19 @@ import { useGetQuery } from '../../hooks/useGetQuery.ts';
 import { Game } from '../../types/game.interface.ts';
 import 'chart.js/auto';
 import { ButtonPrimary } from '../addons/ButtonPrimary.tsx';
+import { Card } from '../addons/Card.tsx';
+import styled from 'styled-components';
+
+const Selected = styled.div`
+  position: relative;
+  right: 10px;
+  top: 10px;
+  text-align: right;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+`;
 
 export const Chart = () => {
   const { data: gamesData } = useGetQuery<Game[]>('games');
@@ -37,8 +50,17 @@ export const Chart = () => {
   };
 
   return (
-    <>
+    <Card>
       <h2>Wykres</h2>
+      <Selected>
+        {timeRange === 'day'
+          ? 'Dzienny'
+          : timeRange === 'week'
+            ? 'Tygodniowy'
+            : timeRange === 'month'
+              ? 'Miesięczny'
+              : ''}
+      </Selected>
       <div>
         <ButtonPrimary onClick={() => setTimeRange('day')}>
           Dzienny
@@ -53,6 +75,6 @@ export const Chart = () => {
       <div>
         <Bar lang={'pl-PL'} data={chartData} />
       </div>
-    </>
+    </Card>
   );
 };
