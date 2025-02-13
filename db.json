@@ -1,1 +1,165 @@
-{}
+{
+  "players": [
+    {
+      "id": "397d",
+      "name": "gracz 24",
+      "surname": "dupa",
+      "teamId": "fsf"
+    },
+    {
+      "id": "9592",
+      "name": "Nowy",
+      "surname": "dadsa",
+      "teamId": "uda"
+    },
+    {
+      "id": "3b44",
+      "name": "Nowy",
+      "surname": "Gracz",
+      "team": null,
+      "teamId": null
+    },
+    {
+      "id": "7961",
+      "name": "dsadsa",
+      "surname": "dsadsa",
+      "teamId": "cux"
+    },
+    {
+      "id": "cc6c",
+      "name": "ccc",
+      "surname": "cc",
+      "teamId": null
+    },
+    {
+      "id": "0cb9",
+      "name": "koldasd",
+      "surname": "asffdsa",
+      "teamId": null
+    },
+    {
+      "id": "19d9",
+      "name": "xx",
+      "surname": "233",
+      "teamId": "cux"
+    },
+    {
+      "id": "94a0",
+      "name": "dsada",
+      "surname": "asadsasd",
+      "teamId": null
+    }
+  ],
+  "teams": [
+    {
+      "id": "fsf",
+      "name": "Drużyna z graczem",
+      "yearOfEstablishment": 2025,
+      "location": "Polska"
+    },
+    {
+      "id": "cux",
+      "name": "Testowa",
+      "yearOfEstablishment": 2024,
+      "location": "Niemcy"
+    },
+    {
+      "id": "uda",
+      "name": "Drużyna 3",
+      "yearOfEstablishment": 2025,
+      "location": "Niemcy"
+    },
+    {
+      "id": "18fe",
+      "name": "Drużyna 4",
+      "location": "Polska",
+      "yearOfEstablishment": "1995"
+    },
+    {
+      "id": "0d3d",
+      "name": "dsad",
+      "location": "adsda",
+      "yearOfEstablishment": "2020"
+    },
+    {
+      "id": "8af8",
+      "name": "Janusze",
+      "location": "PL",
+      "yearOfEstablishment": "2015"
+    },
+    {
+      "id": "dc2d",
+      "name": "Bolki",
+      "location": "PL",
+      "yearOfEstablishment": "2012"
+    }
+  ],
+  "games": [
+    {
+      "id": "173d",
+      "title": "s",
+      "date": "2025-02-13T00:00:00.000Z",
+      "location": "d",
+      "time": 2,
+      "teamA": "fsf",
+      "teamB": "fsf",
+      "scoreA": 2,
+      "scoreB": 0
+    },
+    {
+      "id": "e81f",
+      "title": "tytuł 2",
+      "location": "pl",
+      "time": 24,
+      "date": "2025-02-11T00:00:00.000Z",
+      "teamA": "fsf",
+      "scoreA": 2,
+      "teamB": "18fe",
+      "scoreB": 2
+    },
+    {
+      "id": "013a",
+      "title": "Testowa",
+      "location": "Pol",
+      "time": 20,
+      "date": "2025-02-13T00:00:00.000Z",
+      "teamA": "0d3d",
+      "scoreA": 5,
+      "teamB": "18fe",
+      "scoreB": 2
+    },
+    {
+      "id": "a11f",
+      "title": "kolejny 10",
+      "location": "pl",
+      "time": 20,
+      "date": "2025-02-10T00:00:00.000Z",
+      "teamA": "18fe",
+      "scoreA": 4,
+      "teamB": "cux",
+      "scoreB": 2
+    },
+    {
+      "id": "babf",
+      "title": "dadas",
+      "location": "dad",
+      "time": 25,
+      "date": "2025-02-11T00:00:00.000Z",
+      "teamA": "uda",
+      "scoreA": 2,
+      "teamB": "18fe",
+      "scoreB": 2
+    },
+    {
+      "id": "8b54",
+      "title": "Puchar Pasikurowic",
+      "location": "PL",
+      "time": 2,
+      "date": "2025-02-14T00:00:00.000Z",
+      "teamA": "8af8",
+      "scoreA": 4,
+      "teamB": "dc2d",
+      "scoreB": 3
+    }
+  ]
+}
